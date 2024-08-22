@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Fitness Pro</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#bmi-calculator">BMI Calculator</a></li>
+                <li><a href="#team">Our Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <h2>Transform Your Body & Mind</h2>
+        <p>Join us for a journey towards better health and fitness.</p>
+        <a href="#services" class="btn">Get Started</a>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <h3>Personal Training</h3>
+            <p>Customized workouts designed just for you.</p>
+        </div>
+        <div class="service-card">
+            <h3>Nutrition Planning</h3>
+            <p>Personalized meal plans to fuel your fitness goals.</p>
+        </div>
+        <div class="service-card">
+            <h3>Group Classes</h3>
+            <p>Motivating group workouts for all fitness levels.</p>
+        </div>
+    </section>
+
+    <section id="bmi-calculator" class="bmi-section">
+        <h2>BMI Calculator</h2>
+        <form>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter your weight">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" placeholder="Enter your height">
+            <button type="button" onclick="calculateBMI()">Calculate</button>
+        </form>
+        <p id="bmi-result"></p>
+    </section>
+
+    <section id="team" class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-member">
+            <img src="trainer1.jpg" alt="Trainer 1">
+            <h3>Jane Doe</h3>
+            <p>Head Trainer</p>
+        </div>
+        <div class="team-member">
+            <img src="trainer2.jpg" alt="Trainer 2">
+            <h3>John Smith</h3>
+            <p>Nutrition Expert</p>
+        </div>
+        <div class="team-member">
+            <img src="trainer3.jpg" alt="Trainer 3">
+            <h3>Emily Johnson</h3>
+            <p>Yoga Instructor</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Fitness Pro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function calculateBMI() {
+            const weight = document.getElementById('weight').value;
+            const height = document.getElementById('height').value;
+            if (weight && height) {
+                const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+                document.getElementById('bmi-result').innerText = `Your BMI is ${bmi}`;
+            } else {
+                document.getElementById('bmi-result').innerText = 'Please enter your weight and height.';
+            }
+        }
+    </script>
+</body>
+</html>
